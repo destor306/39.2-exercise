@@ -25,14 +25,15 @@ const [dogs, setDogs] = useState({
 
   if(dogs.isLoading) return <h1>Loading...</h1>;
   return (
-    <div className="App">
-      <BrowserRouter>
+    <>
+    <BrowserRouter>
         <NavBar dogs={dogs.data}/>
         <div>
           <RouteList dogs={dogs.data}/>
         </div>
       </BrowserRouter>
-    </div>
+    </>
+      
   );
 }
   export default Dogs;

@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";   
 import DogDetails from "./DogDetails";
+import ColorDetails from "./ColorDetails";
 
 const FilterDogDetails = ({dogs}) => {
     const {name} = useParams();
@@ -9,4 +10,11 @@ const FilterDogDetails = ({dogs}) => {
     return <DogDetails dogs={dog} />;
 }
 
-export default FilterDogDetails;
+
+const FilterColorDetails = ({colors})=>{
+    const {name} = useParams();
+
+    const color = colors.data.find(color => color.name.toLowerCase() === name);
+    return<ColorDetails color={color} />;
+}
+export {FilterDogDetails, FilterColorDetails};

@@ -2,9 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
-import NavBar from "./NavBar";
-import RouteList from "./RouteList";
 import ColorNavBar from "./ColorNavBar";
+import ColorRouteList from "./ColorRouteLIst";
 
 
 const Colors = () => {
@@ -26,12 +25,16 @@ const [colors, setColor] = useState({
 
   if(colors.isLoading) return <h1>Loading...</h1>;
   return (
-    <div className="App">
-      <BrowserRouter>
+    <>
+    <BrowserRouter>
         <ColorNavBar colors={colors.data}/>
-        
+        <div>
+          <ColorRouteList colors={colors}/>
+
+        </div>
       </BrowserRouter>
-    </div>
+    </>
+      
   );
 }
   export default Colors;

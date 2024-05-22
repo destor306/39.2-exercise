@@ -1,6 +1,6 @@
 import {Routes, Route, Navigate} from 'react-router-dom';
 import DogList from './DogList';
-import FilterDogDetails from './FilterDogDetails';  
+import {FilterDogDetails} from './FilterDetails';  
 const RouteList = ({dogs}) => {
     return (
         <Routes>
